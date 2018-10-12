@@ -1,3 +1,13 @@
+To do:
+[] npm install dependencies
+[] create reducers
+[] create inputs and buttons for methods
+[] create methods
+[] create client views
+[] create admin page
+
+
+
 # Redux Feedback Loop
 
 > **PLEASE COMMENT YOUR CODE.** Do not clone this repository. Instead, download the zip, extract the contents, `git init`, `git add .`, `git commit -m "initial commit - base project"` and add your remote. Please do this before you leave for the day.
@@ -21,6 +31,8 @@ Now that the server is running, open a new terminal tab with `cmd + t` and start
 ```
 npm run client
 ```
+
+
 
 ### ADD NEW FEEDBACK
 
