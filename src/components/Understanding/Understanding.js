@@ -7,7 +7,7 @@ state = {
     understanding: '',
 }
 
-    handleFeelingChange = (event) => {
+    handleUnderstandingChange = (event) => {
       this.setState({
           understanding:event.target.value,
       })
@@ -21,7 +21,7 @@ state = {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}method="get" action="/#/support">
-                <input type="number" value={this.state.understanding} onChange={this.handleFeelingChange} placeholder="Get the material?" />
+                <input autoFocus type="number" value={this.state.understanding} onChange={this.handleUnderstandingChange} placeholder="Get the material?" />
                 <input type="submit" value="NEXT" />
                 </form>
             </div>
@@ -35,4 +35,4 @@ const mapReduxStatetoProps = reduxState => {
         feedbackReducer: reduxState.feedbackReducer,
     }
 }
-export default connect()(Understanding);
+export default connect(mapReduxStatetoProps)(Understanding);

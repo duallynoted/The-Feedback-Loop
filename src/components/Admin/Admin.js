@@ -22,6 +22,20 @@ getFeedback = () => {
     });//end GET call to server
 };//end getFeedback
 
+deleteFeedback = (feedbackToDelete) => {
+    axios({
+      method:'DELETE',
+      url:'/feedback',
+      params: feedbackToDelete
+    }).then((response) =>{
+    console.log('deleted: ', response.data);
+    this.getFeedback();
+  }).catch((error) =>{
+    alert('Error deleting feedback');
+    console.log('error', error);    
+  })
+};//end delete feedback
+
 
 componentDidMount () {
     this.getFeedback();
@@ -36,6 +50,7 @@ componentDidMount () {
               <th>Understanding</th>
               <th>Support</th>
               <th>Comments</th>
+              <th>Delete</th>
             </tr>
             {this.state.feedback.map((item) => {
               return (<tr key={item.id}>
@@ -43,6 +58,7 @@ componentDidMount () {
                 <td>{item.understanding}</td>
                 <td>{item.support}</td>
                 <td>{item.comments}</td>
+                <td><button onClick={()=>this.deleteFeedback(item)}>Delete</button></td>
               </tr>)
             })}
           </thead>

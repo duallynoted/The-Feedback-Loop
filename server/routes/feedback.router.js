@@ -26,6 +26,18 @@ router.post('/', (req, res) => {
         })//end POST query
 });//end POST call server side
 
+//this will delete user-generated feedback
+router.delete('/', (req, res) => [
+    pool.query(`DELETE FROM "feedback"
+    WHERE "id" = ($1);`, [req.query.id])
+        .then((results) => {
+            res.sendStatus(200);
+        }).catch((error) => {
+            console.log('Error DELETING feedback from PostgreSQL', error);
+            res.sendStatus(500);
+        })//end DELETE query
+]);//end DELETE call server side
+
 module.exports = router;
 
 

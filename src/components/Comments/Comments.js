@@ -22,7 +22,7 @@ sendFeedback = (feedback) => {
 };//end sendFeedback
 
 
-    handleFeelingChange = (event) => {
+    handleCommentsChange = (event) => {
       this.setState({
           comments:event.target.value,
       })
@@ -37,7 +37,7 @@ sendFeedback = (feedback) => {
         return (
             <div>
                 <form onSubmit={this.handleSubmit} method="get" action="/#/admin"> 
-                <input type="text" value={this.state.comments} onChange={this.handleFeelingChange} placeholder="Anything else?" />
+                <input autoFocus type="text" value={this.state.comments} onChange={this.handleCommentsChange} placeholder="Anything else?" />
                 <input type="submit" value="NEXT" />
                 </form>
             </div> 

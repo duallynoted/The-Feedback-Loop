@@ -9,6 +9,7 @@ import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import ThankYou from '../ThankYou/ThankYou';
+import HeaderBar from '../HeaderBar/HeaderBar';
 
 class App extends Component {
 
@@ -16,10 +17,7 @@ class App extends Component {
       return (
         <Router>  
         <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Feedback!</h1>
-            <h4><i>Don't forget it!</i></h4>
-          </header>
+          <HeaderBar />
 
           <br />
           <ul>

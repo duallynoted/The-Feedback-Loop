@@ -7,7 +7,7 @@ state = {
     support: '',
 }
 
-    handleFeelingChange = (event) => {
+    handleSupportChange = (event) => {
       this.setState({
           support:event.target.value,
       })
@@ -21,7 +21,7 @@ state = {
         return (
             <div>
                 <form onSubmit={this.handleSubmit} method="get" action="/#/comments">
-                <input type="number" value={this.state.support} onChange={this.handleFeelingChange} placeholder="Feeling supported?" />
+                <input autoFocus type="number" value={this.state.support} onChange={this.handleSupportChange} placeholder="Feeling supported?" />
                 <input type="submit" value="NEXT" />
                 </form>
             </div>
@@ -35,4 +35,4 @@ const mapReduxStatetoProps = reduxState => {
         feedbackReducer: reduxState.feedbackReducer,
     }
 }
-export default connect()(Support);
+export default connect(mapReduxStatetoProps)(Support);
