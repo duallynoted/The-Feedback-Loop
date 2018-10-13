@@ -8,6 +8,7 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
+import ThankYou from '../ThankYou/ThankYou';
 
 class App extends Component {
 
@@ -22,18 +23,18 @@ class App extends Component {
 
           <br />
           <ul>
-          <li><Link to ="/">Home</Link></li>
-          <li><Link to ="/admin">Admin</Link></li>
+          {/* <li><Link to ="/admin">Admin</Link></li> */}
           <li><Link to ="/start">Start Feedback</Link></li>
-          <li><Link to ="/understanding">Understanding</Link></li>
-          <li><Link to ="/support">Support</Link></li>
-          <li><Link to ="/comments">Comments</Link></li> 
+          {/* <li><Link to ="/understanding">Understanding</Link></li> */}
+          {/* <li><Link to ="/support">Support</Link></li> */}
+          {/* <li><Link to ="/comments">Comments</Link></li>  */}
         </ul>
         <Route exact path = "/admin" component={Admin} />
         <Route exact path = "/start" component={Feeling} />
         <Route exact path = "/understanding" component={Understanding} />
         <Route exact path = "/support" component={Support} />
         <Route exact path = "/comments" component={Comments} />
+        <Route exact path = "/thankYou" component={ThankYou} />
         </div>
         </Router>
       );

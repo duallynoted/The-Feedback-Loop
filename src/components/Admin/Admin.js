@@ -13,7 +13,6 @@ getFeedback = () => {
         method:'GET',
         url:'/feedback'
     }).then((response) => {
-        console.log(response.data);
         this.setState({
             feedback: [...response.data]
         });

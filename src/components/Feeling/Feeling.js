@@ -22,7 +22,7 @@ state = {
         return (
             <div>
                 <form onSubmit={this.handleSubmit} method="get" action="/#/understanding">
-                <input type="text" value={this.state.feeling} onChange={this.handleFeelingChange} placeholder="How are you feeling?" />
+                <input type="number" value={this.state.feeling} onChange={this.handleFeelingChange} placeholder="How are you feeling?" />
                 <input type="submit" value="NEXT" />
                 </form>
             </div>

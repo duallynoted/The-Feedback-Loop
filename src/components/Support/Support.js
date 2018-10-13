@@ -21,7 +21,7 @@ state = {
         return (
             <div>
                 <form onSubmit={this.handleSubmit} method="get" action="/#/comments">
-                <input type="text" value={this.state.support} onChange={this.handleFeelingChange} placeholder="Feeling supported?" />
+                <input type="number" value={this.state.support} onChange={this.handleFeelingChange} placeholder="Feeling supported?" />
                 <input type="submit" value="NEXT" />
                 </form>
             </div>
