@@ -1,9 +1,9 @@
 To do:
-[] npm install dependencies
-[] create reducers
+[x] npm install dependencies
+[x] create reducers
+[] create client views
 [] create inputs and buttons for methods
 [] create methods
-[] create client views
 [] create admin page
 
 
