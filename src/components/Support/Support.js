@@ -8,19 +8,22 @@ state = {
 }
 
     handleFeelingChange = (event) => {
-      console.log(event.target.value);
       this.setState({
           support:event.target.value,
       })
     };
-    handleClick = () => {
-        this.props.dispatch({ type: 'ADD_SUPPORT', payload: this.state.support })
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.props.dispatch({ type: 'ADD_SUPPORT', payload: this.state.support });
+        this.props.history.push('/comments');
     }
     render() {
         return (
             <div>
+                <form onSubmit={this.handleSubmit} method="get" action="/#/comments">
                 <input type="text" value={this.state.support} onChange={this.handleFeelingChange} placeholder="Feeling supported?" />
-                <button onClick={this.handleClick}>Next</button>
+                <input type="submit" value="NEXT" />
+                </form>
             </div>
 
         );

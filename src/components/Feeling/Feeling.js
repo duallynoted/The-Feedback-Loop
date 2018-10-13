@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {Link} from 'react-router-dom'; 
 
 
 class Feeling extends Component {
@@ -8,19 +9,22 @@ state = {
 }
 
     handleFeelingChange = (event) => {
-      console.log(event.target.value);
       this.setState({
           feeling:event.target.value,
       })
     };
-    handleClick = () => {
+    handleSubmit = (event) => {
+        event.preventDefault();
         this.props.dispatch({ type: 'ADD_FEELING', payload: this.state.feeling })
+        this.props.history.push('/understanding')
     }
     render() {
         return (
             <div>
+                <form onSubmit={this.handleSubmit} method="get" action="/#/understanding">
                 <input type="text" value={this.state.feeling} onChange={this.handleFeelingChange} placeholder="How are you feeling?" />
-                <button onClick={this.handleClick}>Next</button>
+                <input type="submit" value="NEXT" />
+                </form>
             </div>
 
         );

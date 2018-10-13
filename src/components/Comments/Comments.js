@@ -8,20 +8,23 @@ state = {
 }
 
     handleFeelingChange = (event) => {
-      console.log(event.target.value);
       this.setState({
           comments:event.target.value,
       })
     };
-    handleClick = () => {
-        this.props.dispatch({ type: 'ADD_COMMENTS', payload: this.state.comments })
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.props.dispatch({ type: 'ADD_COMMENTS', payload: this.state.comments });
+        this.props.history.push('/admin'); //make thank you page and change this
     }
     render() {
         return (
             <div>
+                <form onSubmit={this.handleSubmit} method="get" action="/#/admin"> 
                 <input type="text" value={this.state.comments} onChange={this.handleFeelingChange} placeholder="Anything else?" />
-                <button onClick={this.handleClick}>Next</button>
-            </div>
+                <input type="submit" value="NEXT" />
+                </form>
+            </div> 
 
         );
     }

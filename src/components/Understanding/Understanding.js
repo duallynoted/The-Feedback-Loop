@@ -8,19 +8,22 @@ state = {
 }
 
     handleFeelingChange = (event) => {
-      console.log(event.target.value);
       this.setState({
           understanding:event.target.value,
       })
     };
-    handleClick = () => {
+    handleSubmit = (event) => {
+        event.preventDefault();
         this.props.dispatch({ type: 'ADD_UNDERSTANDING', payload: this.state.understanding })
+        this.props.history.push('/support');
     }
     render() {
         return (
             <div>
+                <form onSubmit={this.handleSubmit}method="get" action="/#/support">
                 <input type="text" value={this.state.understanding} onChange={this.handleFeelingChange} placeholder="Get the material?" />
-                <button onClick={this.handleClick}>Next</button>
+                <input type="submit" value="NEXT" />
+                </form>
             </div>
 
         );
