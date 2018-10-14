@@ -1,6 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import TextField from '@material-ui/core/TextField';
 
+const styles = {
+    card: {
+        minHeight: 200,
+        minWidth: 500,
+        display: "inline-block",
+    },
+    title: {
+        fontSize: 14,
+    },
+    pos: {
+        marginBottom: 12,
+    },
+    button: {
+        margin: 12,
+    },
+};
 
 class Support extends Component {
 state = {
@@ -18,21 +41,52 @@ state = {
         this.props.history.push('/comments');
     }
     render() {
+        const { classes } = this.props;
         return (
-            <div>
-                <form onSubmit={this.handleSubmit} method="get" action="/#/comments">
-                <input autoFocus type="number" value={this.state.support} onChange={this.handleSupportChange} placeholder="Feeling supported?" />
-                <input type="submit" value="NEXT" />
-                </form>
-            </div>
+            <Card className={classes.card}>
+                <CardContent>
+                    <Typography variant="h5" component="h2">
+                        <div>
+                            <form className={classes.container} noValidate autoComplete="off">
+                                <TextField
+                                    autoFocus
+                                    id="standard-name"
+                                    label="Do you feel supported?"
+                                    type="number"
+                                    className={classes.textField}
+                                    value={this.state.support}
+                                    onChange={this.handleSupportChange}
+                                    margin="normal"
+                                />
+                                <Button
+                                    color="secondary"
+                                    className={classes.button}
+                                    type="submit"
+                                    title="NEXT"
+                                    onClick={this.handleSubmit}
+                                    margin="normal"
+                                >NEXT</Button>
+                            </form>
+                        </div>
+                    </Typography>
+                </CardContent>
+            </Card>
+
 
         );
     }
 }
+
+Support.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+const supportCard = withStyles(styles)(Support);
+
 
 const mapReduxStatetoProps = reduxState => {
     return {
         feedbackReducer: reduxState.feedbackReducer,
     }
 }
-export default connect(mapReduxStatetoProps)(Support);
+export default connect(mapReduxStatetoProps)(supportCard);

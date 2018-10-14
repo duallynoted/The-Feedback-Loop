@@ -21,7 +21,7 @@ class App extends Component {
 
           <br />
           <ul>
-          {/* <li><Link to ="/admin">Admin</Link></li> */}
+          <li><Link to ="/admin">Admin</Link></li>
           <li><Link to ="/start">Start Feedback</Link></li>
           {/* <li><Link to ="/understanding">Understanding</Link></li> */}
           {/* <li><Link to ="/support">Support</Link></li> */}
