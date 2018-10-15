@@ -46,7 +46,7 @@ class Feeling extends Component {
         const { classes } = this.props;
         return (
             <div>
-            <h1>F E E D B A C K</h1>
+            <h1>The F E E D B A C K Loop</h1>
             <h3>Please use this form to let us know how you're progressing in the program.</h3>
             <h5>On a scale of 1-10, rate yourself in each field for how you did today. There is a section for comments at the end. </h5>   
             <Card className={classes.card}>
