@@ -4,7 +4,8 @@ const pool = require('../modules/pool')
 
 //this will make a call to the server to get the feedback that is made/stored there
 router.get('/', (req, res) => {
-    pool.query(`SELECT * FROM "feedback"`)
+    pool.query(`SELECT * FROM "feedback"
+    ORDER BY "id" DESC;`)
         .then((results) => {
             res.send(results.rows);
         }).catch((error) => {
