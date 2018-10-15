@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
@@ -46,6 +45,10 @@ class Feeling extends Component {
     render() {
         const { classes } = this.props;
         return (
+            <div>
+            <h1>F E E D B A C K</h1>
+            <h3>Please use this form to let us know how you're progressing in the program.</h3>
+            <h5>On a scale of 1-10, rate yourself in each field for how you did today. There is a section for comments at the end. </h5>   
             <Card className={classes.card}>
                 <CardContent>
                     <Typography variant="h5" component="h2">
@@ -62,7 +65,7 @@ class Feeling extends Component {
                                     margin="normal"
                                 />
                                 <Button  
-                                    color="secondary" 
+                                    color="default" 
                                     className={classes.button}                    
                                     type="submit"
                                     title="NEXT"
@@ -72,11 +75,12 @@ class Feeling extends Component {
                             </form>
                         </div>
                     </Typography>
+                    <Typography>
+                        Are feeling stressed, great, or somewhere in-between?
+                    </Typography>
                 </CardContent>
-
             </Card>
-
-
+            </div>
         );
     }
 }

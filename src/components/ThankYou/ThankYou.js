@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import CardActions from '@material-ui/core/CardActions';
+import PositionedSnackbar from '../SnackBar/SnackBar'
 
 
 const styles = {
@@ -32,7 +33,10 @@ class ThankYou extends Component {
         event.preventDefault();
         this.props.history.push('/start');
     }
-   
+    // handleAdminButton = (event) => {
+    //     event.preventDefault();
+    //     this.props.history.push('/admin');
+    // }
     render() {
         const { classes } = this.props;
         return (
@@ -56,6 +60,8 @@ class ThankYou extends Component {
                     </Typography>
                 </CardContent>
             </Card>
+            {/* <Button onClick={this.handleAdminButton}>Admin</Button> */}
+            <PositionedSnackbar />
             </div>    
         );
     }

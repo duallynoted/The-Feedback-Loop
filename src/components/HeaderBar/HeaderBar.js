@@ -5,12 +5,15 @@ import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import { withRouter } from "react-router";
+
 
 
 const styles = {
     root: {
         flexGrow: 1,
-        backgroundColor: "#353393",
+        backgroundColor: "#335393",
+        color:"#FFFFFF"
     },
     text: {
         color: "#FFFFFF",
@@ -18,15 +21,24 @@ const styles = {
 };
 
 class HeaderBar extends Component {
+
+handleHome =()=>{
+    this.props.history.push('/start');
+}    
     render() {
         const { classes } = this.props;
         return (
             <div className={classes.root}>
                 <AppBar position="static" color="default">
                     <Toolbar className={classes.root}>
-                        <Typography variant="h6" className={classes.text}>
-                            Feedback
-          </Typography>
+                    <Typography className={classes.text}>
+                        
+                        </Typography>
+                        <Typography variant="" className={classes.text}>
+                            <Button onClick={this.handleHome}
+                                    className={classes.text}
+                                    color="default">Feedback</Button>
+          </Typography> 
                     </Toolbar>
                 </AppBar>
             </div>
@@ -38,4 +50,6 @@ HeaderBar.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(HeaderBar);
+const headHome = withRouter(HeaderBar)
+
+export default withStyles(styles)(headHome);

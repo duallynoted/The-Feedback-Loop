@@ -62,7 +62,7 @@ class Understanding extends Component {
                                     margin="normal"
                                 />
                                 <Button
-                                    color="secondary"
+                                    color="default"
                                     className={classes.button}
                                     type="submit"
                                     title="NEXT"
@@ -71,6 +71,9 @@ class Understanding extends Component {
                                 >NEXT</Button>
                             </form>
                         </div>
+                    </Typography>
+                    <Typography>
+                        Did you understand everything? Nothing? Something?
                     </Typography>
                 </CardContent>
 

@@ -1,6 +1,26 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
+
+const styles = theme => ({
+  root: {
+    width: '100%',
+    marginTop: theme.spacing.unit * 3,
+    overflowX: 'auto',
+  },
+  table: {
+    minWidth: 700,
+  },
+});
 
 class Admin extends Component {
 state = {
@@ -41,33 +61,47 @@ componentDidMount () {
     this.getFeedback();
 }
     render() {
+      const { classes } = this.props;
       return (
         <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Feeling</th>
-              <th>Understanding</th>
-              <th>Support</th>
-              <th>Comments</th>
-              <th>Delete</th>
-            </tr>
-            {this.state.feedback.map((item) => {
-              return (<tr key={item.id}>
-                <td>{item.feeling}</td>
-                <td>{item.understanding}</td>
-                <td>{item.support}</td>
-                <td>{item.comments}</td>
-                <td><button onClick={()=>this.deleteFeedback(item)}>Delete</button></td>
-              </tr>)
-            })}
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-      </div>
+          <Paper className={classes.root}>
+      <Table className={classes.table}>
+        <TableHead>
+          <TableRow>
+            <TableCell numeric>Feeling</TableCell>
+            <TableCell numeric>Understanding</TableCell>
+            <TableCell numeric>Support</TableCell>
+            <TableCell >Comments</TableCell>
+            <TableCell >Delete</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+        {this.state.feedback.map((item) => {
+            return (
+              <TableRow key={item.id}>
+                <TableCell numeric>{item.feeling}</TableCell>
+                <TableCell numeric>{item.understanding}</TableCell>
+                <TableCell numeric>{item.support}</TableCell>
+                <TableCell >{item.comments}</TableCell>
+                <TableCell ><Button onClick={()=>this.deleteFeedback(item)}
+                                    color="secondary">Delete</Button></TableCell>
+              </TableRow>
+            );
+          })}
+        </TableBody>
+      </Table>
+    </Paper>
+    </div>
       );
     }
   }
 
-export default connect()(Admin);
+  Admin.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+const adminTable= withStyles(styles)(Admin);
+
+export default connect()(adminTable);
+
+

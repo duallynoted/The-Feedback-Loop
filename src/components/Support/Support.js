@@ -59,7 +59,7 @@ state = {
                                     margin="normal"
                                 />
                                 <Button
-                                    color="secondary"
+                                    color="default"
                                     className={classes.button}
                                     type="submit"
                                     title="NEXT"
@@ -68,6 +68,9 @@ state = {
                                 >NEXT</Button>
                             </form>
                         </div>
+                    </Typography>
+                    <Typography>
+                        If you need help, do you feel comfortable seeking and finding it?
                     </Typography>
                 </CardContent>
             </Card>

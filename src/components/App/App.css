@@ -16,7 +16,7 @@
 .App-intro {
   font-size: large;
 }
-table {
+/* table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
@@ -30,7 +30,7 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
-}
+} */
 
 ul{
   list-style: none

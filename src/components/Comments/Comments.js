@@ -97,6 +97,10 @@ class Comments extends Component {
                             </form>
                         </div>
                     </Typography>
+                    <Typography>
+                        Please make any additional comments you feel are necessary. 
+                        This is to help you, so be honest; we can take it. 
+                    </Typography>
                 </CardContent>
             </Card>
         );

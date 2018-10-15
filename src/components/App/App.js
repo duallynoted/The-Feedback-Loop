@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
 import './App.css';
 import { connect } from 'react-redux';
 import Admin from '../Admin/Admin';
@@ -11,6 +10,7 @@ import Comments from '../Comments/Comments';
 import ThankYou from '../ThankYou/ThankYou';
 import HeaderBar from '../HeaderBar/HeaderBar';
 
+
 class App extends Component {
 
     render() {
@@ -21,8 +21,8 @@ class App extends Component {
 
           <br />
           <ul>
-          <li><Link to ="/admin">Admin</Link></li>
-          <li><Link to ="/start">Start Feedback</Link></li>
+          {/* <li><Link to ="/admin"><Button>Admin</Button></Link></li> */}
+          {/* <li><Link to ="/start"><Button color="primary">Start Feedback</Button></Link></li> */}
           {/* <li><Link to ="/understanding">Understanding</Link></li> */}
           {/* <li><Link to ="/support">Support</Link></li> */}
           {/* <li><Link to ="/comments">Comments</Link></li>  */}
