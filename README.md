@@ -6,6 +6,9 @@ The app begins on the home("/start") page by introducing the user to what The Fe
 
 When the user hits "submit," it sends the information to the database where it is stored. The app navigates to a page which thanks the user for submitting, and gives an option to leave further feedback. Also, in the AppBar at the top of the page, there is a button to return to the home page anytime. There is an option to view the database of feedback in a table on "/admin." There is a Snackbar dialog box which holds the link for that page. User authentication can be added to ensure that it is an eyes-only page. The administrator has the ability to view the feedback in the order it was recieved. They also have the ability to delete the feedback from the database. An alert will appear upon click of "DELETE" to remind the administrator that this action is irrevocable.
 
+### Database
+See data.sql file in root for ERD
+
 ### Technologies Utilized
 
 - [x] React
